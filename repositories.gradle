@@ -1,0 +1,20 @@
+// Add any additional repositories for your dependencies here.
+
+repositories {
+    maven {
+        name = "gt"
+        url = "https://mechaenetia.com/"
+    }
+    maven {
+		name = "gtom"
+		url = "https://gregtech.mechaenetia.com/"
+	}
+    maven {
+		name = "sonatype"
+		url = "https://oss.sonatype.org/content/repositories/snapshots/"
+	}
+	maven {
+		name = "curse"
+		url = "https://cursemaven.com"
+	}
+}
