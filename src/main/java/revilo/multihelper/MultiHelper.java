@@ -19,7 +19,7 @@ public class MultiHelper extends Abstract_Mod {
 
     public static final String MOD_ID = "multihelper";
     public static final String MOD_NAME = "MultiHelper";
-    public static final String VERSION = Tags.VERSION; // Keep in line with Reach Core Version
+    public static final String VERSION = /* Tags.VERSION */ "0.1.0"; // Keep in line with Reach Core Version
     public static gregapi.code.ModData MOD_DATA = new gregapi.code.ModData(MOD_ID, MOD_NAME);
 
     @cpw.mods.fml.common.SidedProxy(

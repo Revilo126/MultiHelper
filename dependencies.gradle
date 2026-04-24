@@ -40,4 +40,9 @@ dependencies {
 
     implementation("com.gregoriust.gregtech:gregtech_1.7.10:6.17.06:dev")
     implementation("com.github.GTNewHorizons:CodeChickenCore:1.4.12:dev")
+
+    compileOnly("ic2:IC2Classic:1.2.1.8:dev")
+    compileOnly("applecore:AppleCore:1.7.10-3.1.1:deobf")
+    compileOnly("com.mod-buildcraft:buildcraft:7.1.23:dev")
+    compileOnly('com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-869-GTNH:dev')
 }
