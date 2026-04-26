@@ -17,6 +17,9 @@ import gregapi.item.IItemEnergy;
 import gregapi.util.ST;
 import gregapi.util.UT;
 
+/*
+ * Simple implementation of IItemEnergy, to reduce bloat in subsequent classes.
+ */
 public abstract class ItemEnergy implements IItemEnergy {
 
     public ItemStack mEmptyItem, mHalfItem, mFullItem;

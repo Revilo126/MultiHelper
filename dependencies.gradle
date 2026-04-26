@@ -40,7 +40,7 @@ dependencies {
     api("com.github.GTNewHorizons:GTNHLib:0.9.44:dev")
 
 	// Use compileOnly to not cause issues.
-    compileOnly("com.gregoriust.gregtech:gregtech_1.7.10:6.17.06:dev")
+    implementation("com.gregoriust.gregtech:gregtech_1.7.10:6.17.06:dev")
     implementation("com.github.GTNewHorizons:CodeChickenCore:1.4.12:dev")
 
     compileOnly("ic2:IC2Classic:1.2.1.8:dev")
