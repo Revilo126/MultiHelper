@@ -18,7 +18,7 @@ import gregapi.util.ST;
 import gregapi.util.UT;
 
 /*
- * Simple implementation of IItemEnergy, to reduce bloat in subsequent classes.
+ * Simple implementation of IItemEnergy, to ease creation of custom Energy Types. Don't extends this!
  */
 public abstract class ItemEnergy implements IItemEnergy {
 
