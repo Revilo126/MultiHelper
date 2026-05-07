@@ -19,15 +19,11 @@ public class Definition<T extends ITileEntityMultiBlockController> {
     public int offsetX, offsetY, offsetZ;
 
     public int getSizeX() {
-        int max = 0;
-        for (String[] layer : structure) for (String row : layer) max = Math.max(max, row.length());
-        return max;
+        return structure[0][0].length();
     }
 
     public int getSizeY() {
-        int max = 0;
-        for (String[] layer : structure) max = Math.max(max, layer.length);
-        return max;
+        return structure[0].length;
     }
 
     public int getSizeZ() {

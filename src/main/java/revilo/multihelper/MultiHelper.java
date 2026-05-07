@@ -1,14 +1,17 @@
 package revilo.multihelper;
 
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.event.FMLServerStoppedEvent;
+import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import gregapi.api.Abstract_Mod;
-
-/*
- * TODO:
- * Add NEI viewer similar to StructureLib
- * Autobuilder, this includes all the functions included.
- * Maybe compat with structurelib?
- */
+import gregapi.api.Abstract_Proxy;
+import gregapi.code.ModData;
 
 @Mod(
     modid = MultiHelper.MOD_ID,
@@ -19,14 +22,14 @@ public class MultiHelper extends Abstract_Mod {
 
     public static final String MOD_ID = "multihelper";
     public static final String MOD_NAME = "MultiHelper";
-    public static final String VERSION = Tags.VERSION; // Keep in line with Reach Core Version
-    public static gregapi.code.ModData MOD_DATA = new gregapi.code.ModData(MOD_ID, MOD_NAME);
+    public static final String VERSION = Tags.VERSION;
+    public static ModData MOD_DATA = new ModData(MOD_ID, MOD_NAME);
 
-    @cpw.mods.fml.common.SidedProxy(
+    @SidedProxy(
         modId = MOD_ID,
         clientSide = "revilo.multihelper.ClientProxy",
         serverSide = "revilo.multihelper.CommonProxy")
-    public static gregapi.api.Abstract_Proxy PROXY;
+    public static Abstract_Proxy PROXY;
 
     @Override
     public String getModID() {
@@ -44,75 +47,64 @@ public class MultiHelper extends Abstract_Mod {
     }
 
     @Override
-    public gregapi.api.Abstract_Proxy getProxy() {
+    public Abstract_Proxy getProxy() {
         return PROXY;
     }
 
-    // Do not change these 7 Functions. Just keep them this way.
-    @cpw.mods.fml.common.Mod.EventHandler
-    public final void onPreLoad(cpw.mods.fml.common.event.FMLPreInitializationEvent aEvent) {
+    @Mod.EventHandler
+    public final void onPreLoad(FMLPreInitializationEvent aEvent) {
         onModPreInit(aEvent);
     }
 
-    @cpw.mods.fml.common.Mod.EventHandler
-    public final void onLoad(cpw.mods.fml.common.event.FMLInitializationEvent aEvent) {
+    @Mod.EventHandler
+    public final void onLoad(FMLInitializationEvent aEvent) {
         onModInit(aEvent);
     }
 
-    @cpw.mods.fml.common.Mod.EventHandler
-    public final void onPostLoad(cpw.mods.fml.common.event.FMLPostInitializationEvent aEvent) {
+    @Mod.EventHandler
+    public final void onPostLoad(FMLPostInitializationEvent aEvent) {
         onModPostInit(aEvent);
     }
 
-    @cpw.mods.fml.common.Mod.EventHandler
-    public final void onServerStarting(cpw.mods.fml.common.event.FMLServerStartingEvent aEvent) {
+    @Mod.EventHandler
+    public final void onServerStarting(FMLServerStartingEvent aEvent) {
         onModServerStarting(aEvent);
     }
 
-    @cpw.mods.fml.common.Mod.EventHandler
-    public final void onServerStarted(cpw.mods.fml.common.event.FMLServerStartedEvent aEvent) {
+    @Mod.EventHandler
+    public final void onServerStarted(FMLServerStartedEvent aEvent) {
         onModServerStarted(aEvent);
     }
 
-    @cpw.mods.fml.common.Mod.EventHandler
-    public final void onServerStopping(cpw.mods.fml.common.event.FMLServerStoppingEvent aEvent) {
+    @Mod.EventHandler
+    public final void onServerStopping(FMLServerStoppingEvent aEvent) {
         onModServerStopping(aEvent);
     }
 
-    @cpw.mods.fml.common.Mod.EventHandler
-    public final void onServerStopped(cpw.mods.fml.common.event.FMLServerStoppedEvent aEvent) {
+    @Mod.EventHandler
+    public final void onServerStopped(FMLServerStoppedEvent aEvent) {
         onModServerStopped(aEvent);
     }
 
     @Override
-    public void onModPreInit2(cpw.mods.fml.common.event.FMLPreInitializationEvent aEvent) {}
+    public void onModPreInit2(FMLPreInitializationEvent aEvent) {}
 
     @Override
-    public void onModInit2(cpw.mods.fml.common.event.FMLInitializationEvent aEvent) {}
+    public void onModInit2(FMLInitializationEvent aEvent) {}
 
     @Override
-    public void onModPostInit2(cpw.mods.fml.common.event.FMLPostInitializationEvent aEvent) {
-        // Insert your PostInit Code here and not above
-    }
+    public void onModPostInit2(FMLPostInitializationEvent aEvent) {}
 
     @Override
-    public void onModServerStarting2(cpw.mods.fml.common.event.FMLServerStartingEvent aEvent) {
-        // Insert your ServerStarting Code here and not above
-    }
+    public void onModServerStarting2(FMLServerStartingEvent aEvent) {}
 
     @Override
-    public void onModServerStarted2(cpw.mods.fml.common.event.FMLServerStartedEvent aEvent) {
-        // Insert your ServerStarted Code here and not above
-    }
+    public void onModServerStarted2(FMLServerStartedEvent aEvent) {}
 
     @Override
-    public void onModServerStopping2(cpw.mods.fml.common.event.FMLServerStoppingEvent aEvent) {
-        // Insert your ServerStopping Code here and not above
-    }
+    public void onModServerStopping2(FMLServerStoppingEvent aEvent) {}
 
     @Override
-    public void onModServerStopped2(cpw.mods.fml.common.event.FMLServerStoppedEvent aEvent) {
-        // Insert your ServerStopped Code here and not above
-    }
+    public void onModServerStopped2(FMLServerStoppedEvent aEvent) {}
 
 }
