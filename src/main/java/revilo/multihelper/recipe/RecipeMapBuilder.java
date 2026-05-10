@@ -1,9 +1,10 @@
 package revilo.multihelper.recipe;
 
-import static gregapi.data.CS.F;
-import static gregapi.data.CS.T;
+import static gregapi.data.CS.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import gregapi.recipes.Recipe;
 import gregapi.recipes.Recipe.RecipeMap;
@@ -12,6 +13,8 @@ import gregapi.recipes.Recipe.RecipeMap;
  * To ease the creation of RecipeMaps
  */
 public class RecipeMapBuilder {
+
+    public static List<RecipeMap> MULTI_MAP_LIST = new ArrayList<>();
 
     public static Builder builder(String aNameInternal, String aNameLocal) {
         return new Builder(aNameInternal, aNameLocal);
@@ -120,7 +123,7 @@ public class RecipeMapBuilder {
         }
 
         public RecipeMap build() {
-            return new RecipeMap(
+            RecipeMap mRecipeMap = new RecipeMap(
                 aRecipeList,
                 aNameInternal,
                 aNameLocal,
@@ -147,6 +150,8 @@ public class RecipeMapBuilder {
                 aCombinePower,
                 aUseBucketSizeIn,
                 aUseBucketSizeOut);
+            MULTI_MAP_LIST.add(mRecipeMap);
+            return mRecipeMap;
         }
     }
 
